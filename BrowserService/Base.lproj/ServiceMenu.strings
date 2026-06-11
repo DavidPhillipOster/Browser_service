@@ -1,0 +1,11 @@
+/* 
+  ServiceMenu.strings
+  BrowserService
+  Created by david on 6/10/26.
+*/
+
+// Description
+"Open links in Firefox" = "Open links in Firefox";
+
+// Menu Item
+"Open in Firefox" = "Open in Firefox";
