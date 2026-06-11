@@ -29,6 +29,16 @@ and
 
 ![](images/2.png)
 
+## Gatekeeper
+
+Normally, I go through the process of using Xcode's Archive command, then distribute the archive. In the past, this brought up a series of dialogs to let Apple upload and inspect the binary and cryptographically sign it. This time I could not get Xcode to allow me to upload the binary.
+
+When I tested that `BrowserService.service` would work correctly using the .zip from [Releases](https://github.com/DavidPhillipOster/Browser_service/releases), the Mac complained that Apple had not verified it for security. To fix this, in Terminal, I did the following, to remove the extended attributes that macOS puts on files it has not verified.:
+
+    cd ~/Library/Services
+    xattr -dr com.apple.quarantine BrowserService.service 
+    xattr -dr com.apple.provenance BrowserService.service
+
 ## To Use:
 
 In Safari, select a link then choose **Open in Firefox** from **Services** submenu of the right-click menu. You could assign a command key equivalent to make it even easier.
