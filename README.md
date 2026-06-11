@@ -1,7 +1,8 @@
 # Browser_service
-macOS menu contextual command to open a URL in Firefox, for Safari Users
 
-It lives in the **Services** submenu of the Safari's first menu, and also under services in Safari’s contextual menu.
+macOS menu contextual command to open a URL in Firefox, even if it isn't your default browser.
+
+It lives in the **Services** submenu of an app's first menu, and also under services in Safari’s contextual menu.
 
 ## To Build:
 
@@ -38,14 +39,21 @@ When I tested that `BrowserService.service` would work correctly using the .zip 
     cd ~/Library/Services
     xattr -dr com.apple.quarantine BrowserService.service 
     xattr -dr com.apple.provenance BrowserService.service
+    
+## Versions
+
+1.0 Initial Release
+
+1.1 Available in any app, not just Safari.
 
 ## To Use:
 
-In Safari, select a link then choose **Open in Firefox** from **Services** submenu of the right-click menu. You could assign a command key equivalent to make it even easier.
+Select a link then choose **Open in Firefox** from **Services** submenu of the right-click menu. You could assign a command key equivalent to make it even easier.
 
 ## To Customize:
 
-Currently, this opens Safari links in Firefox. If you want to open them in, for example, Chrome: 
+Currently, this opens default browser links in Firefox. If you want to open them in, for example, Chrome:
+ 
 1.) Change the `BrowserService.service` `Contents` folder, change `Info.plist`  `Services User Data` where it says `org.mozilla.firefox` change that to: `com.google.Chrome` and in `Info.plist`  `Services`, change: These two occorences of Firefox to Chrome. 
 
 `"Open links in Firefox";`
